@@ -283,6 +283,8 @@
               
                 <a href="/friends" class="drawer-menu-item-link">
                   
+                    <i class="fas fa-user-group" aria-hidden="true"></i>
+                  
                   <span class="name">友情链接</span>
                 </a>
               
@@ -290,16 +292,27 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                <a href="/downloads" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                  
+                  <span class="name">下载</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
                   <span>
                     
                       <i class="fas fa-link"></i>
                     
                     <span class="name">更多</span>
                   </span>
-                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
                 </a>
-                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                <ul class="drawer-sub-menu" v-if="isOpen(7)">
                   
                   <li>
                     <a href="/gallery">
@@ -311,11 +324,11 @@
                   </li>
                   
                   <li>
-                    <a href="/friends">
+                    <a href="/music">
                       
-                      <i class="fas fa-user-group" style="margin-top: -20px;"></i>
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>音乐</span>
                     </a>
                   </li>
                   
@@ -472,7 +485,20 @@
               
                 <a href="/friends" class="menu-item-link" title="友情链接">
                   
+                    <i class="fas fa-user-group" aria-hidden="true"></i>
+                  
                   <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/downloads" class="menu-item-link" title="下载">
+                  
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                  
+                  <span class="name">下载</span>
                 </a>
               
             </li>
@@ -498,11 +524,11 @@
                   </li>
                   
                   <li>
-                    <a href="/friends">
+                    <a href="/music">
                       
-                      <i class="fas fa-user-group" style="margin-top: -20px;"></i>
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>音乐</span>
                     </a>
                   </li>
                   
@@ -969,12 +995,21 @@
 }
 
 
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
 </style>
 <meting-js  
   class=""
   server="netease"
   type="playlist"
-  id="8062553743"
+  id="651106892"
   fixed='true'
   autoplay='false'
   theme='#42b983'
@@ -1396,7 +1431,7 @@
 <!-- 爱心点击 -->
 
   
-    <script src="/js/cursor/text.js"></script>
+    <script src="/js/cursor/fireworks.js"></script>
   
 
 

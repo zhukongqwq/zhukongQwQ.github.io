@@ -283,6 +283,8 @@
               
                 <a href="/friends" class="drawer-menu-item-link">
                   
+                    <i class="fas fa-user-group" aria-hidden="true"></i>
+                  
                   <span class="name">友情链接</span>
                 </a>
               
@@ -290,16 +292,27 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                <a href="/downloads" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                  
+                  <span class="name">下载</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
                   <span>
                     
                       <i class="fas fa-link"></i>
                     
                     <span class="name">更多</span>
                   </span>
-                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
                 </a>
-                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                <ul class="drawer-sub-menu" v-if="isOpen(7)">
                   
                   <li>
                     <a href="/gallery">
@@ -311,11 +324,11 @@
                   </li>
                   
                   <li>
-                    <a href="/friends">
+                    <a href="/music">
                       
-                      <i class="fas fa-user-group" style="margin-top: -20px;"></i>
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>音乐</span>
                     </a>
                   </li>
                   
@@ -472,7 +485,20 @@
               
                 <a href="/friends" class="menu-item-link" title="友情链接">
                   
+                    <i class="fas fa-user-group" aria-hidden="true"></i>
+                  
                   <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/downloads" class="menu-item-link" title="下载">
+                  
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                  
+                  <span class="name">下载</span>
                 </a>
               
             </li>
@@ -498,11 +524,11 @@
                   </li>
                   
                   <li>
-                    <a href="/friends">
+                    <a href="/music">
                       
-                      <i class="fas fa-user-group" style="margin-top: -20px;"></i>
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>音乐</span>
                     </a>
                   </li>
                   
@@ -656,14 +682,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/15.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/bg/25.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        about
+        关于
       </span>
     </div>
     
@@ -676,6 +702,22 @@
 
       
 
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 0 |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
       
     
   </div>
@@ -707,7 +749,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/about/index.html" target="_blank" title="about">https://zhukongqwq.github.io/about/index.html</a>
+    <a href="/about/index.html" target="_blank" title="关于">https://zhukongqwq.github.io/about/index.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -739,7 +781,7 @@
     
       <!-- https://github.com/overtrue/share.js -->
 <!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+<div class="social-share" data-sites="qq,qzone,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
 <script src="/js/shareJs/social-share.min.js"></script>
 </script>
@@ -877,9 +919,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023-01-01-hello-world/" class="post-img " style="background-size: cover; 
+              <a href="/2023-01-01-world/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/bg/14.png" class="lazyload placeholder" data-srcset="/medias/bg/14.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -888,7 +930,7 @@
                   <span class="post-date">01-01</span>
                 
               </div>
-              <a class="post-title" href="/2023-01-01-hello-world/">Hello World</a>
+              <a class="post-title" href="/2023-01-01-world/">world</a>
             </div>
           </div>
         
@@ -936,6 +978,11 @@
 
 
       
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>0 字</div>
+        </div>
+      
 
       
         <div class="webinfo-item">
@@ -959,7 +1006,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sun Jan 01 2023 14:04:07 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Sun Jan 01 2023 16:09:36 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2023-01-01 日</div>
           
         </div>
@@ -1460,12 +1507,21 @@
 }
 
 
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
 </style>
 <meting-js  
   class=""
   server="netease"
   type="playlist"
-  id="8062553743"
+  id="651106892"
   fixed='true'
   autoplay='false'
   theme='#42b983'
@@ -1887,7 +1943,7 @@
 <!-- 爱心点击 -->
 
   
-    <script src="/js/cursor/text.js"></script>
+    <script src="/js/cursor/fireworks.js"></script>
   
 
 

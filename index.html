@@ -283,6 +283,8 @@
               
                 <a href="/friends" class="drawer-menu-item-link">
                   
+                    <i class="fas fa-user-group" aria-hidden="true"></i>
+                  
                   <span class="name">友情链接</span>
                 </a>
               
@@ -290,16 +292,27 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                <a href="/downloads" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                  
+                  <span class="name">下载</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
                   <span>
                     
                       <i class="fas fa-link"></i>
                     
                     <span class="name">更多</span>
                   </span>
-                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
                 </a>
-                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                <ul class="drawer-sub-menu" v-if="isOpen(7)">
                   
                   <li>
                     <a href="/gallery">
@@ -311,11 +324,11 @@
                   </li>
                   
                   <li>
-                    <a href="/friends">
+                    <a href="/music">
                       
-                      <i class="fas fa-user-group" style="margin-top: -20px;"></i>
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>音乐</span>
                     </a>
                   </li>
                   
@@ -472,7 +485,20 @@
               
                 <a href="/friends" class="menu-item-link" title="友情链接">
                   
+                    <i class="fas fa-user-group" aria-hidden="true"></i>
+                  
                   <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/downloads" class="menu-item-link" title="下载">
+                  
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                  
+                  <span class="name">下载</span>
                 </a>
               
             </li>
@@ -498,11 +524,11 @@
                   </li>
                   
                   <li>
-                    <a href="/friends">
+                    <a href="/music">
                       
-                      <i class="fas fa-user-group" style="margin-top: -20px;"></i>
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>音乐</span>
                     </a>
                   </li>
                   
@@ -662,12 +688,19 @@
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     
       <swiper-slide>
-        <div class="item swiper-lazy" data-background="https://pic4.zhimg.com/80/v2-5317ee3782ed2cdc733a907b0065f895_1440w.jpg" style="background-size: 300000px; 
+        <div class="item swiper-lazy" data-background="https://api.ixiaowai.cn/api/api.php" style="background-size: 300000px; 
           background-position: left center;" style="position: relative;">
           <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
             <div class="flag">
               
-              <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="https://pic4.zhimg.com/80/v2-5317ee3782ed2cdc733a907b0065f895_1440w.jpg" style="height: 100%; background-size: cover; 
+              <div class="swiper-video">
+                <video class="full-video" poster="/gif/wait.gif" autoplay loop muted style="width: 100%;height:100%;object-fit: cover;">
+                  <source style="width: 100%;height: 100vh;" src="/video/bad%20apple.mp4">
+                </video>
+                <div class="swiper-video-maskBox"></div>
+              </div>
+              
+              <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="https://api.ixiaowai.cn/api/api.php" style="height: 100%; background-size: cover; 
                 background-position: center center;">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
               </div>
@@ -687,7 +720,7 @@
                     <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://space.bilibili.com/1879499378?spm_id_from=333.1007.0.0" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;">B站链接</a></div>
                   
                   
-                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip" class="read-more swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;">下载主题</a></div>
+                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="https://zhukongqwq.github.io/downloads" class="read-more swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;">下载列表</a></div>
                   
                 </div>
               </div>
@@ -729,7 +762,7 @@
   var loop = JSON.parse('true') ? false : JSON.parse('true');
   var effect = 'slide';
   var swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
-  var defaultDesc = '煮酒洗净尘嚣，论知交,万般付之一笑，共偕老';
+  var defaultDesc = '光锥之内就是命运,给岁月以文明，而不是给文明以岁月。,如果大山不会走向穆罕穆德，穆罕穆德可以走向大山。';
   defaultDesc = defaultDesc.split(',');
   var defaultDescTypedLoop = JSON.parse('true');
   var vm = new Vue({
@@ -1256,10 +1289,10 @@
 @media (min-width: 992px) {
   
     .swiper-video {
-      display: none;
+      display: block;
     }
     .swiper-default-bgImg {
-      display: block;  
+      display: none;  
     }
   
 }
@@ -1422,7 +1455,7 @@
             <span class="post-time">2023-01-01</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2023-01-01-hello-world/">Hello World</a>
+            <a class="post-title-link" href="/2023-01-01-world/">world</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
@@ -1436,25 +1469,25 @@
             </div>
           </div>
           <div class="post-img-mobile">
-            <a href="/2023-01-01-hello-world/" style="background-size: cover; 
+            <a href="/2023-01-01-world/" style="background-size: cover; 
               background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              <img class="lazyload lazyload placeholder" src="/medias/bg/14.png" class="lazyload placeholder" data-srcset="/medias/bg/14.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
             </a>
           </div>
           <div class="post-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+            
           </div>
         </div>
         <div class="post-more">
-          <a href="/2023-01-01-hello-world/">
+          <a href="/2023-01-01-world/">
             <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/2023-01-01-hello-world/" style="background-size: cover; 
+        <a href="/2023-01-01-world/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+          <img class="lazyload lazyload placeholder" src="/medias/bg/14.png" class="lazyload placeholder" data-srcset="/medias/bg/14.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
         </a>
       </div>
     </article>
@@ -1572,9 +1605,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023-01-01-hello-world/" class="post-img " style="background-size: cover; 
+              <a href="/2023-01-01-world/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/bg/14.png" class="lazyload placeholder" data-srcset="/medias/bg/14.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1583,7 +1616,7 @@
                   <span class="post-date">01-01</span>
                 
               </div>
-              <a class="post-title" href="/2023-01-01-hello-world/">Hello World</a>
+              <a class="post-title" href="/2023-01-01-world/">world</a>
             </div>
           </div>
         
@@ -1631,6 +1664,11 @@
 
 
       
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>0 字</div>
+        </div>
+      
 
       
         <div class="webinfo-item">
@@ -1654,7 +1692,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sun Jan 01 2023 14:04:07 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Sun Jan 01 2023 16:09:37 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2023-01-01 日</div>
           
         </div>
@@ -2008,12 +2046,21 @@
 }
 
 
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
 </style>
 <meting-js  
   class=""
   server="netease"
   type="playlist"
-  id="8062553743"
+  id="651106892"
   fixed='true'
   autoplay='false'
   theme='#42b983'
@@ -2435,7 +2482,7 @@
 <!-- 爱心点击 -->
 
   
-    <script src="/js/cursor/text.js"></script>
+    <script src="/js/cursor/fireworks.js"></script>
   
 
 
